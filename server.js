@@ -2,7 +2,6 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
-const bodyParser = require('body-parser');
 const app = express()
 const port = process.env.PORT || 5000;
 
@@ -14,13 +13,17 @@ const posts = [
   {
     username: 'Alfredo',
     title: 8
+  },
+  {
+    username: 'Bercebal',
+    title: 8
   }
 ]
 
-app.use(bodyParser.json());
+app.use(express.json())
 
 app.get('/api', (req, res) => {
-  res.json({ message: 'Welcome to my API' });
+  res.json({ message: 'Welcome to my API' })
 });
 
 app.get('/api/posts', authenticateToken, (req, res) => {
