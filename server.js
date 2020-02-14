@@ -20,6 +20,7 @@ const posts = [
   }
 ]
 
+app.use(cors())
 app.use(express.json())
 
 app.get('/api', (req, res) => {
