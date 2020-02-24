@@ -1,10 +1,25 @@
-GET http://localhost:5000/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQmVyY2ViYWwiLCJpYXQiOjE1ODE2Nzg2ODh9.hJWTl7Z-anuBjR4UNVaDT9fgyHMseZTWlwnNpE-_o90
-###
-POST http://localhost:5000/api/login
+POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-  "username": "Bercebal"
+  "name": "User",
+  "email": "user@domain.com",
+  "password": "asdfasdf"
 }
 ###
+GET http://localhost:5000/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTUzYjcxZjJmNjczMzIxNzRkMzVmN2QiLCJpYXQiOjE1ODI1NDQ2NzF9.fMho5HzpZnSJPG410UJhCNeHPlgv1d_Vg9IPg4aMXdg
+###
+
+POST http://localhost:5000/users/login
+Content-Type: application/json
+
+{
+  "email": "asdf@nonasdfnon.com",
+  "password": "asdfasdf"
+}
+
+###
+POST http://localhost:5000/users/me/logout
+###
+POST http://localhost:5000/users/me/logoutall
