@@ -1,0 +1,33 @@
+{
+   "swagger": "2.0",
+   "info": {
+     "title": "Expressoo",
+     "description": "This is an app to test new concepts and techs",
+     "version": "1.0"
+   },
+   "produces": ["application/json"],
+   "host": "localhost:5001",
+   "basePath": "/",
+   "paths": {
+     "users/me": {
+       "get": {
+         "x-swagger-router-controller": "users",
+         "operationId": "",
+         "description": "Retrieve user profile",
+         "parameters": [],
+         "responses": {
+         }
+       }
+     },
+     "/test1": {
+       "get": {
+         "x-swagger-router-controller": "middleware-name1",
+         "operationId": "swagTest",
+         "tags": ["/test"],
+         "description": "",
+         "parameters": [],
+         "responses": {}
+       }
+     }
+   }
+}
